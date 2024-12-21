@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title >WE Chat</title>
+  </head>
+  <body style="background: linear-gradient(135deg, #889bf0 0%, #764ba2 100%);">
+
+    <div class="dropdown">
+      <button class="dropbtn"><i class="fas fa-bars"></i></button>
+      <div class="dropdown-content">
+        <a href="#" id="create-group">Create Group</a>
+<a href="#" id="join-group">Join Group</a>
+
+        <a href="#" id="logout">Log Out</a>
+      </div>
+    </div>
+    
+    <h1 class="title" style="color:black">We Chat 💬</h1>
+    <div class="main">
+      <div class="name">
+        <span><i class="far fa-user"></i></span>
+        <span id="username" class="username-display"></span>
+      </div>
+
+      <ul class="message-container" id="message-container">
+       
+      </ul>
+
+      <form class="message-form" id="message-form" >
+        <input
+          type="text"
+          name="message"
+          id="message-input"
+          class="message-input"
+          style="border:1px solid gray;border-radius:25px; box-shadow: 5px 5px gray;"
+          placeholder="Message"
+        />
+        <div class="v-divider" ></div>
+        <button type="submit" class="send-button">
+          send <span><i class="fas fa-paper-plane"></i></span>
+        </button>
+      </form>
+    </div>
+    <h3 class="clients-total" id="client-total" style="color:black">Total clients: 2</h3>
+
+<!-- Create Group Modal -->
+<div id="createGroupModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Create Group</h2>
+    <input type="text" id="group-name" placeholder="Enter group name" />
+    <button id="create-group-btn">Create</button>
+  </div>
+</div>
+
+<!-- Join Group Modal -->
+<div id="joinGroupModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Join Group</h2>
+    <input type="text" id="group-code" placeholder="Enter group code" />
+    <button id="join-group-btn">Join</button>
+  </div>
+</div>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js"
+      integrity="sha512-Q1f3TS3vSt1jQ8AwP2OuenztnLU6LwxgyyYOG1jgMW/cbEMHps/3wjvnl1P3WTrF3chJUWEoxDUEjMxDV8pujg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>

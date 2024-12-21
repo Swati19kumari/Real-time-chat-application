@@ -1,0 +1,41 @@
+<!-- register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+    <title>WE Chat - Create Account</title>
+</head>
+<body class="auth-body">
+    <div class="auth-container">
+        <h1 class="auth-title">WE Chat 💬</h1>
+        <form class="auth-form" id="registerForm">
+            <div class="input-group">
+                <span><i class="far fa-user"></i></span>
+                <input id="username" type="text" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+                <span><i class="far fa-envelope"></i></span>
+                <input id="email" type="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <span><i class="fas fa-lock"></i></span>
+                <input id="password" type="password" placeholder="Password" required>
+            </div>
+            <div class="input-group">
+                <span><i class="fas fa-lock"></i></span>
+                <input id="confirmPassword" type="password" placeholder="Confirm Password" required>
+            </div>
+            
+            <button type="submit" class="auth-button">Create Account</button>
+            <p class="auth-switch">
+                Already have an account? <a href="/login">Login</a>
+            </p>
+        </form>
+    </div>
+    <script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  flex-direction: column; /* Ensures a vertical layout */
+  justify-content: center;
+  align-items: center;
+  background-color: #ebebeb;
+  height: 100vh; /* Full height */
+  overflow: hidden;
+}
+
+.title {
+  margin: 20px 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #7e7e7e;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1200px; /* Wide layout for desktop */
+  height: 700px; /* Adjusted height */
+  background-color: #ffffff;
+  border: 8px solid #dddddd;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 700;
+  padding: 8px 16px;
+  color: #7e7e7e;
+  background-color: #ebebeb;
+}
+
+.name > span {
+  color: #bbb;
+}
+
+.name-input {
+  font-size: 24px;
+  font-weight: 700;
+  color: #7e7e7e;
+  flex-grow: 1;
+  border: none;
+  margin-left: 12px;
+  outline: none;
+  background-color: #ebebeb;
+}
+
+.message-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background-color: #f6f6f6;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.message-left,
+.message-right {
+  list-style: none;
+  padding: 12px 16px;
+  margin: 8px 0;
+  max-width: 60%;
+  font-size: 18px;
+  word-wrap: break-word;
+}
+
+.message-left {
+  border-radius: 20px 20px 20px 0;
+  align-self: flex-start;
+  background-color: #ffffff;
+  box-shadow: -2px 2px 4px rgba(220, 220, 220, 1);
+}
+
+.message-right {
+  border-radius: 20px 20px 0 20px;
+  align-self: flex-end;
+  background-color: #2d2d2d;
+  color: #f6f6f6;
+  box-shadow: 2px 2px 4px rgba(220, 220, 220, 1);
+}
+
+.message-left > p > span,
+.message-right > p > span {
+  display: block;
+  font-style: italic;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.feedback {
+  font-style: italic;
+  font-size: 14px;
+  padding: 0 16px 16px 16px;
+  color: #2d2d2d;
+  text-align: center;
+}
+
+.message-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: #ffffff;
+  border-top: 2px solid #dddddd;
+}
+
+.message-input {
+  flex-grow: 1;
+  height: 48px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 0 12px;
+  background-color: #ffffff;
+  box-shadow: inset 0px 2px 4px rgba(220, 220, 220, 0.6);
+}
+
+.send-button {
+  margin-left: 16px;
+  height: 48px;
+  padding: 0 24px;
+  font-size: 16px;
+  border: none;
+  background-color: #2d2d2d;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 24px;
+  box-shadow: 2px 2px 4px rgba(220, 220, 220, 0.6);
+}
+
+.clients-total {
+  margin: 20px 0;
+  color: #7e7e7e;
+  font-size: 18px;
+}
+
+/* Responsiveness */
+@media (max-width: 1440px) {
+  .main {
+    width: 90%;
+    height: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: none;
+  }
+
+  .name {
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  .message-input {
+    font-size: 14px;
+  }
+
+  .send-button {
+    font-size: 14px;
+    padding: 0 16px;
+  }
+}
+
+/* Dropdown container styling */
+.dropdown {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.dropbtn {
+  background-color: #764ba2; /* Matches gradient */
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dropbtn:hover {
+  background-color: #5d3c86; /* Darker shade on hover */
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  min-width: 160px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #764ba2;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* General modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark transparent background */
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.modal-content h2 {
+  color: #764ba2;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.modal-content input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 16px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.modal-content input:focus {
+  box-shadow: 0 0 8px rgba(118, 75, 162, 0.8);
+  border-color: #764ba2;
+}
+
+.modal-content button {
+  background-color: #764ba2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #5d3c86;
+  box-shadow: 0 4px 8px rgba(118, 75, 162, 0.5);
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #888;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #333;
+}
+
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Style for the username display */
+.username-display {
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 5px;
+  border-radius: 5px;
+  animation: typing 2s steps(20) 1 normal both; /* Optional animation for typing */
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+

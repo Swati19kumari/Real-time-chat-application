@@ -1,0 +1,37 @@
+<!-- index.html (Splash screen) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+    <title>WE Chat - Welcome</title>
+</head>
+<body class="splash-body">
+    <div class="splash-container">
+        <h1 class="splash-title">WE Chat 💬</h1>
+        <div class="splash-animation">
+            <div class="loading-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+  
+<script>
+    // Check if user is already logged in
+    const token = localStorage.getItem('token');
+    if (token) {
+        // If user is logged in, redirect to chat immediately
+        window.location.href = '/chat';
+    } else {
+        // If not logged in, redirect to login after splash animation
+        setTimeout(() => {
+            window.location.href = '/login';
+        }, 3000);
+    }
+</script>
+</body>
+</html>
